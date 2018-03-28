@@ -66,14 +66,16 @@ body {
   border: solid 1px #000;
   background-color: #fff;
   margin-top: 10px;
+  color: #fff;
+  font-family: 'EB+Garamond', serif;
+  font-size: 2.5em;
+  text-align: center;
 }
 .card:hover {
+  cursor: pointer;
   transform: scale(0.9);
   transition: transform 2s ease;
 }
-/* .red {
-  background-color: #9e2021;
-} */
 .blue {
   background-color: #155f60;
 }
@@ -82,4 +84,16 @@ body {
 }
 .dark-green {
   background-color: #1e7f3f;
+}
+.beta, .delta, .lambda {
+  margin-top: 5px;
+}
+.zeta {
+  margin-top: 2px;
+}
+.opened {
+  display: block;
+}
+.front {
+  display: none;
 }
