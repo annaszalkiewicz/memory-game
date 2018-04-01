@@ -14,7 +14,7 @@ FOURTH COLOR: #1e7f3f
 }
 html, body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -37,11 +37,17 @@ body {
   height: 80px;
 }
 .title {
-  font-family: 'Exo';
+  font-family: 'Exo', sans-serif;
   font-size: 2em;
   font-weight: 400;
   position: absolute;
-  margin: -60px auto auto 87px;
+  margin: -87px auto auto 87px;
+}
+.subtitle {
+  position: absolute;
+  margin: -46px auto auto 88px;
+  font-family: 'Exo', sans-serif;
+  font-size: 1.3em;
 }
 
 /* SECTION GAME-CANVAS */
