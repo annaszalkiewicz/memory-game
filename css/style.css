@@ -33,21 +33,22 @@ body {
   border-bottom: solid 1px #000;
 }
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 .title {
   font-family: 'Exo', sans-serif;
   font-size: 2em;
   font-weight: 400;
   position: absolute;
-  margin: -87px auto auto 87px;
+  margin: -65px auto auto 70px;
 }
 .subtitle {
   position: absolute;
-  margin: -46px auto auto 88px;
+  margin: -26px auto auto 70px;
   font-family: 'Exo', sans-serif;
   font-size: 1.3em;
+  font-weight: 400;
 }
 
 /* SECTION GAME-CANVAS */
@@ -98,8 +99,40 @@ body {
   margin-top: 2px;
 }
 .opened {
-  display: block;
+  display: block !important;
 }
 .front {
   display: none;
+  transform: rotateX(180deg);
+}
+.flip {
+  transform: rotateX(180deg);
+  transition: transform
+}
+.alpha {
+  content: '&alpha;';
+}
+.beta {
+  content: '&beta;';
+}
+.gamma {
+  content: '&gamma;';
+}
+.delta {
+  content: '&delta;';
+}
+.zeta {
+  content: '&zeta';
+}
+.eta {
+  content: '&eta;';
+}
+.lambda {
+  content: '&lambda;';
+}
+.mi {
+  content: '&mu;';
+}
+.back {
+  margin-top: 5px;
 }
