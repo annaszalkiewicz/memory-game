@@ -101,37 +101,13 @@ body {
 .opened {
   display: block !important;
 }
-.front {
+/* .front {
   display: none;
   transform: rotateX(180deg);
-}
+} */
 .flip {
-  transform: rotateX(180deg);
-  transition: transform
-}
-.alpha {
-  content: '&alpha;';
-}
-.beta {
-  content: '&beta;';
-}
-.gamma {
-  content: '&gamma;';
-}
-.delta {
-  content: '&delta;';
-}
-.zeta {
-  content: '&zeta';
-}
-.eta {
-  content: '&eta;';
-}
-.lambda {
-  content: '&lambda;';
-}
-.mi {
-  content: '&mu;';
+  transform: rotateX(0deg);
+  transition: transform 2s ease;
 }
 .back {
   margin-top: 5px;
