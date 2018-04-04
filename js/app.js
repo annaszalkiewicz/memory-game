@@ -1,27 +1,52 @@
-const cards = ['alpha', 'alpha', 'beta', 'beta', 'gamma', 'gamma', 'delta', 'delta', 'zeta', 'zeta', 'eta', 'eta', 'lambda', 'lambda', 'mi', 'mi'];
-const front = document.querySelectorAll('.front');
+const card = document.querySelectorAll('.card');
+const cards = [...card];
 
-function shuffleCards(array) {
+init();
 
-  let currentIndex = cards.length;
-  let temporaryValue;
-  let randomIndex;
+function shuffleCards() {
 
-  while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-  };
+    for (let i = 0; i < cards.length; i++) {
+        let random = Math.floor(Math.random() * (cards.length - 1));
 
-  return array;
-
-};
-
-function createBoard() {
-	shuffleCards(cards);
-	for (let i = 0; i < 16; i++) {
-		$('.card').appendChild('<div class="front ${cards[i]}"></div>');
-	}
+        let cards = cards[i];
+        cards[i] = cards[random];
+        cards[random] =  cards;
+      }
+    // return array;
 }
+function init() {
+  shuffleCards();
+}
+
+
+// const cards = ['&alpha;', '&alpha;', '&beta;', '&beta;', '&gamma;', '&gamma;', '&delta;', '&delta;', '&zeta;', '&zeta;', '&eta;', '&eta;', '&lambda;', '&lambda;', '&mu;', '&mu;'];
+// const front = document.querySelectorAll('.front');
+// // const cards = ['alpha', 'alpha', 'beta', 'beta', 'gamma', 'gamma', 'delta', 'delta', 'zeta', 'zeta', 'eta', 'eta', 'lambda', 'lambda', 'mi', 'mi'];
+// function shuffleCards(array) {
+//
+//   let currentIndex = cards.length;
+//   let temporaryValue;
+//   let randomIndex;
+//
+//   while (currentIndex !== 0) {
+//       randomIndex = Math.floor(Math.random() * currentIndex);
+//       currentIndex -= 1;
+//       temporaryValue = array[currentIndex];
+//       array[currentIndex] = array[randomIndex];
+//       array[randomIndex] = temporaryValue;
+//   };
+//
+//   return array;
+//
+// };
+//
+// function createBoard() {
+// 	for (card of cards) {
+//     const newDiv = document.createElement('div');
+//     newDiv.className = 'front';
+//     newDiv.innerHTML = cards[card];
+//     document.getElementsByClassName('card').appendChild(newDiv);
+//   }
+//
+// }
+// shuffleCards(cards);
