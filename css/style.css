@@ -33,22 +33,21 @@ body {
   border-bottom: solid 1px #000;
 }
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
 }
 .title {
-  font-family: 'Exo', sans-serif;
-  font-size: 2em;
-  font-weight: 400;
+  font-size: 1.5em;
+  font-weight: 500;
   position: absolute;
-  margin: -65px auto auto 70px;
+  margin: -53px auto auto 65px;
 }
 .subtitle {
   position: absolute;
-  margin: -26px auto auto 70px;
-  font-family: 'Exo', sans-serif;
+  margin: -26px auto auto 65px;
   font-size: 1.3em;
   font-weight: 400;
+  font-style: italic;
 }
 
 /* SECTION GAME-CANVAS */
@@ -166,4 +165,22 @@ body {
 :focus {
   outline: 0;
   box-shadow: 0 0 10px #6c943e;
+}
+/* FOOTER  */
+
+.footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+.link:hover, .link:focus {
+  color: #6c943e;
 }
