@@ -100,15 +100,70 @@ body {
 }
 .opened {
   display: block !important;
-}
-/* .front {
-  display: none;
-  transform: rotateX(180deg);
-} */
-.flip {
   transform: rotateX(0deg);
   transition: transform 2s ease;
 }
+.front {
+  display: none;
+  transform: rotateX(-180deg);
+}
+.closed {
+}
 .back {
   margin-top: 5px;
+}
+
+/* GAME OPTIONS SECTION */
+
+.game-options {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  width: 300px;
+  margin: 10px auto;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+.row-title {
+  text-align: center;
+  font-weight: 400;
+}
+.stars {
+  display: inline;
+  width: 24%;
+}
+.fa-star {
+  color: #6c943e;
+}
+.moves {
+  width: 24%;
+}
+.timer {
+  width: 24%;
+}
+.reload-button {
+  width: 14%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.help-button {
+  width: 14%;
+  color: #fff;
+  background-color: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.reload-button:hover, .help-button:hover,
+.reload-button:focus, .help-button:focus {
+  color: #6c943e;
+  box-shadow: 0 0 10px #6c943e;
+}
+:focus {
+  outline: 0;
+  box-shadow: 0 0 10px #6c943e;
 }

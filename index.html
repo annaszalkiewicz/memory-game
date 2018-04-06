@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Learn Greek alphabet Memory Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Exo:300,400,500|EB+Garamond:400,500,600" rel="stylesheet">
-    <script src="https://use.fontawesome.com/8c47be805b.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <div class="container">
@@ -17,7 +17,35 @@
         <h1 class="title">Learn Greek alphabet</h1>
         <h2 class="subtitle">with Memory Game!</h2>
       </header>
-      <section id="navigation-panel">
+      <section id="navigation-panel" class="game-options">
+        <div class="row">
+          <div class="stars">
+            <h3 class="row-title">Stars:</h3>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="moves">
+            <h3 class="row-title">
+              Moves:
+            </p>
+            <p class="moves-counter">0</p>
+          </div>
+          <div class="timer">
+            <h3 class="row-title">
+              Time:
+            </p>
+            <p class="time-counter">00:00</p>
+          </div>
+          <button type="button" name="button" class="reload-button">
+            <i class="fas fa-redo-alt fa-2x"></i>
+          </button>
+          <button type="button" name="button" class="help-button">
+            <i class="fas fa-question fa-2x"></i>
+          </button>
+        </div>
 
       </section>
       <section id="game-canvas">
