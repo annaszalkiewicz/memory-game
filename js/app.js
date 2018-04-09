@@ -6,7 +6,7 @@ const front = document.querySelector('.front');
 const board = document.querySelector('.board');
 const back = document.querySelector('.back');
 const reload = document.querySelector('#reload-game');
-let gameCard = document.getElementsByClassName('card');
+let gameCards = document.getElementsByClassName('card');
 
 // FUNCTIONS' DEFINITIONS
 
@@ -14,6 +14,7 @@ let gameCard = document.getElementsByClassName('card');
 
 function init() {
   shuffleCards();
+
 }
 init();
 
@@ -30,20 +31,28 @@ function shuffleCards() {
 
 // Function to add flip animation
 
-// function flipCard() {
-//   let card = document.getElementsByClassName('.card');
+function flipCard(event) {
+  let front = event.target;
+  let back = event.target.nextElementSibling;
+
+  this.classList.add('flip');
+}
+
+// Function to remove flip class
+
+// function removeFlip(e) {
+//   const card = document.getElementsByClassName('card');
 //
-//   card.classList.add('flip');
+//   card.classList.remove('flip');
 // }
-
-$('.card').on('click', function flipCard() {
-  $(this).addClass('flip');
-});
-
+// removeFlip();
 
 // EVENT LISTENERS
 
 // Reload game on button click
 reload.addEventListener('click', init); // Reset game when clicking on reload button
 
-// gameCard.addEventListener('click', flipCard); // Flip card event when clicking on card
+// Flip card event when clicking on card
+for (gameCard of gameCards) {
+  gameCard.addEventListener('click', flipCard);
+}
