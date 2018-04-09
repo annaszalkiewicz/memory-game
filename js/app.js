@@ -1,7 +1,23 @@
-const card = document.querySelectorAll('.front');
-const cards = [...card];
+// VARIABLES' DEFINITIONS
 
+const card = document.querySelectorAll('.back');
+const cards = [...card];
+const front = document.querySelector('.front');
+const board = document.querySelector('.board');
+const back = document.querySelector('.back');
+const reload = document.querySelector('#reload-game');
+let gameCard = document.getElementsByClassName('card');
+
+// FUNCTIONS' DEFINITIONS
+
+// Function to reset game
+
+function init() {
+  shuffleCards();
+}
 init();
+
+// Function to shuffle cards randomly
 
 function shuffleCards() {
   for (let i = 0; i < cards.length; i++) {
@@ -12,7 +28,22 @@ function shuffleCards() {
     }
 }
 
-function init() {
-  shuffleCards();
-}
-window.addEventListener("click", init);
+// Function to add flip animation
+
+// function flipCard() {
+//   let card = document.getElementsByClassName('.card');
+//
+//   card.classList.add('flip');
+// }
+
+$('.card').on('click', function flipCard() {
+  $(this).addClass('flip');
+});
+
+
+// EVENT LISTENERS
+
+// Reload game on button click
+reload.addEventListener('click', init); // Reset game when clicking on reload button
+
+// gameCard.addEventListener('click', flipCard); // Flip card event when clicking on card

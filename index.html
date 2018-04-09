@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Learn Greek alphabet Memory Game</title>
+    <title>Learn Greek letters with Memory Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|EB+Garamond:400,500,600" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
@@ -30,16 +30,20 @@
           <div class="moves">
             <h3 class="row-title">
               Moves:
+            </h3>
+            <p class="moves-counter">
+              0
             </p>
-            <p class="moves-counter">0</p>
           </div>
           <div class="timer">
             <h3 class="row-title">
               Time:
+            </h3>
+            <p class="time-counter">
+              00:00
             </p>
-            <p class="time-counter">00:00</p>
           </div>
-          <button type="button" name="button" class="reload-button">
+          <button type="button" name="button" class="reload-button" id="reload-game">
             <i class="fas fa-redo-alt fa-2x"></i>
           </button>
           <button type="button" name="button" class="help-button">
@@ -50,74 +54,103 @@
       </section>
       <section id="game-canvas">
         <div class="board-container">
-          <ul id="game-board" class="board">
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&alpha;</div>
-            </li>
-            <li class="card green">
-              <div class="back">?</div>
-              <div class="front">&alpha;</div>
-            </li>
-            <li class="card dark-green">
-              <div class="back">?</div>
-              <div class="front">&beta;</div>
-            </li>
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&beta;</div>
-            </li>
-            <li class="card green">
-              <div class="back">?</div>
-              <div class="front">&gamma;</div>
-            </li>
-            <li class="card dark-green">
-              <div class="back">?</div>
-              <div class="front">&gamma;</div>
-            <!-- </li> -->
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&delta;</div>
-            </li>
-            <li class="card green">
-              <div class="back">?</div>
-              <div class="front">&delta;</div>
-            </li>
-            <li class="card dark-green">
-              <div class="back">?</div>
-              <div class="front">&zeta;</div>
-            </li>
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&zeta;</div>
-            </li>
-            <li class="card green">
-              <div class="back">?</div>
-              <div class="front">&eta;</div>
-            </li>
-            <li class="card dark-green">
-              <div class="back">?</div>
-              <div class="front">&eta;</div>
-            </li>
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&lambda;</div>
-            </li>
-            <li class="card green">
-              <div class="back">?</div>
-              <div class="front">&lambda;</div>
-            </li>
-            <li class="card dark-green">
-              <div class="back">?</div>
-              <div class="front">&mu;</div>
-            </li>
-            <li class="card blue">
-              <div class="back">?</div>
-              <div class="front">&mu;</div>
-            </li>
-          </ul>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&alpha;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green">
+              <div class="side front">?</div>
+              <div class="side back">&alpha;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green">
+              <div class="side front">?</div>
+              <div class="side back">&beta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&beta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green">
+              <div class="side front">?</div>
+              <div class="side back">&gamma;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green">
+              <div class="side front">?</div>
+              <div class="side back">&gamma;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&delta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green">
+              <div class="side front">?</div>
+              <div class="side back">&delta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green">
+              <div class="side front">?</div>
+              <div class="side back">&zeta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&zeta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green">
+              <div class="side front">?</div>
+              <div class="side back">&eta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green">
+              <div class="side front">?</div>
+              <div class="side back">&eta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&lambda;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green">
+              <div class="side front">?</div>
+              <div class="side back">&lambda;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green">
+              <div class="side front">?</div>
+              <div class="side back">&mu;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue">
+              <div class="side front">?</div>
+              <div class="side back">&mu;</div>
+            </div>
+          </div>
         </div>
-
       </section>
       <footer class="footer">
         <p class="copyright">
