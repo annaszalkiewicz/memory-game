@@ -2,11 +2,15 @@
 
 const card = document.querySelectorAll('.back');
 const cards = [...card];
-const front = document.querySelector('.front');
 const board = document.querySelector('.board');
 const back = document.querySelector('.back');
 const reload = document.querySelector('#reload-game');
 let gameCards = document.getElementsByClassName('card');
+const open = document.getElementsByClassName('flip');
+let openCards = [...open];
+const match = document.getElementsByClassName('match');
+let matchedCards = [...match];
+
 
 // FUNCTIONS' DEFINITIONS
 
@@ -14,7 +18,7 @@ let gameCards = document.getElementsByClassName('card');
 
 function init() {
   shuffleCards();
-
+  // const unflip = removeFlip();
 }
 init();
 
@@ -36,16 +40,50 @@ function flipCard(event) {
   let back = event.target.nextElementSibling;
 
   this.classList.add('flip');
+  openCards.push(this);
 }
 
-// Function to remove flip class
+// Function to run when 2 cards match
 
-// function removeFlip(e) {
-//   const card = document.getElementsByClassName('card');
-//
-//   card.classList.remove('flip');
-// }
-// removeFlip();
+function matched() {
+
+  setTimeout(function(){
+    openCards.forEach(function(card){
+      card.classList.add('match');
+      matchedCards.push(card);
+    });
+    openCards = [];
+  }, 500);
+}
+
+// Function to run when 2 cards don't match
+
+function unmatched() {
+ 
+  setTimeout(function(){
+    openCards.forEach(function(card){
+      card.classList.remove('flip');
+    });
+    openCards = [];
+}, 1500);
+}
+
+// Function to check if 2 cards match
+
+function checkCards() {
+
+  for (let openCard of openCards) {
+    if ((openCards.length === 2)&&(openCards[0].innerText === openCards[1].innerText)) {
+      return matched();
+    }
+    else if ((openCards.length === 2)&&(openCards[0].innerText !== openCards[1].innerText)) {
+      return unmatched();
+    }
+  }
+
+}
+
+checkCards();
 
 // EVENT LISTENERS
 
