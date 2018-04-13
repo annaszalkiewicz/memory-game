@@ -41,6 +41,8 @@ function flipCard(event) {
 
   this.classList.add('flip');
   openCards.push(this);
+  checkCards();
+
 }
 
 // Function to run when 2 cards match
@@ -51,9 +53,10 @@ function matched() {
     openCards.forEach(function(card){
       card.classList.add('match');
       matchedCards.push(card);
+
     });
     openCards = [];
-  }, 500);
+  }, 1000);
 }
 
 // Function to run when 2 cards don't match
@@ -63,9 +66,10 @@ function unmatched() {
   setTimeout(function(){
     openCards.forEach(function(card){
       card.classList.remove('flip');
+
     });
     openCards = [];
-}, 1500);
+}, 500);
 }
 
 // Function to check if 2 cards match
@@ -74,16 +78,18 @@ function checkCards() {
 
   for (let openCard of openCards) {
     if ((openCards.length === 2)&&(openCards[0].innerText === openCards[1].innerText)) {
-      return matched();
+      matched();
+      console.log("It's matching!");
     }
     else if ((openCards.length === 2)&&(openCards[0].innerText !== openCards[1].innerText)) {
-      return unmatched();
+      unmatched();
+      console.log("It's not matching!");
+      
     }
   }
 
 }
 
-checkCards();
 
 // EVENT LISTENERS
 

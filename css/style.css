@@ -130,6 +130,7 @@ body {
 }
 .match {
   background-color: #1e7f3f;
+  visibility: hidden; 
 }
 
 /* GAME OPTIONS SECTION */
