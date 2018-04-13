@@ -10,6 +10,8 @@ const open = document.getElementsByClassName('flip');
 let openCards = [...open];
 const match = document.getElementsByClassName('match');
 let matchedCards = [...match];
+const movesCount = document.getElementById('moves-counter');
+let moves = 0;
 
 
 // FUNCTIONS' DEFINITIONS
@@ -18,7 +20,7 @@ let matchedCards = [...match];
 
 function init() {
   shuffleCards();
-  // const unflip = removeFlip();
+  unmatched();
 }
 init();
 
@@ -53,7 +55,6 @@ function matched() {
     openCards.forEach(function(card){
       card.classList.add('match');
       matchedCards.push(card);
-
     });
     openCards = [];
   }, 1000);
@@ -66,7 +67,6 @@ function unmatched() {
   setTimeout(function(){
     openCards.forEach(function(card){
       card.classList.remove('flip');
-
     });
     openCards = [];
 }, 500);
@@ -78,17 +78,42 @@ function checkCards() {
 
   for (let openCard of openCards) {
     if ((openCards.length === 2)&&(openCards[0].innerText === openCards[1].innerText)) {
+      moveCounter();
       matched();
-      console.log("It's matching!");
     }
     else if ((openCards.length === 2)&&(openCards[0].innerText !== openCards[1].innerText)) {
+      moveCounter();
       unmatched();
-      console.log("It's not matching!");
-      
     }
   }
-
 }
+function moveCounter() {
+
+    moves+=1/2;
+    movesCount.innerText = moves; 
+    checkStars();
+}
+
+
+
+function checkStars() {
+
+  const threeStars = document.getElementById('three-stars');
+  const twoStars = document.getElementById('two-stars');
+  const oneStar = document.getElementById('one-star');
+
+  if ((moves > 15)&&(moves < 25)) {
+    threeStars.style.color = '#000';
+  } 
+  else if ((moves > 25)&&(moves < 35)) {
+    twoStars.style.color = '#000';
+  }
+  else if (moves > 35) {
+    oneStar.style.color = '#000';
+  }
+}
+
+
 
 
 // EVENT LISTENERS
