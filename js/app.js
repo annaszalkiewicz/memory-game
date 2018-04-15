@@ -37,8 +37,7 @@ function startGame() {
   moves = 0;
   minutes = 0;
   seconds = 0;
-  stopTimer();
-  showTime();
+
 }
 
 // Function to shuffle cards randomly
@@ -75,9 +74,10 @@ function matched() {
     openCards = [];
   }, 1000);
 
-  if (matchedCards.length === 16) {
+  if (matchedCards === 16) {
     endGame();
   }
+  
 }
 
 // Function to run when 2 cards don't match
@@ -106,6 +106,7 @@ function checkCards() {
       unmatched();
     }
   }
+  
 }
 function moveCounter() {
 
@@ -136,7 +137,7 @@ function checkStars() {
 
 function showTime() {
 
-  let time = setInterval(getTime, 1000);
+  time = setInterval(getTime, 1000);
   
   function getTime() {
     timer.innerHTML = `${minutes}m ${seconds}s`;
@@ -161,6 +162,8 @@ function stopTimer() {
 
 function endGame() {
   stopTimer();
+  timer.innerHTML = `00:00`;
+
 }
 
 
