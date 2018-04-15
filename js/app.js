@@ -37,6 +37,7 @@ function startGame() {
   moves = 0;
   minutes = 0;
   seconds = 0;
+  stopTimer();
   showTime();
 }
 
@@ -73,6 +74,10 @@ function matched() {
     });
     openCards = [];
   }, 1000);
+
+  if (matchedCards.length === 16) {
+    endGame();
+  }
 }
 
 // Function to run when 2 cards don't match
@@ -127,13 +132,15 @@ function checkStars() {
   }
 }
 
+// Function to get timer working
+
 function showTime() {
 
   let time = setInterval(getTime, 1000);
   
   function getTime() {
     timer.innerHTML = `${minutes}m ${seconds}s`;
-    seconds += 1;
+    seconds ++;
 
     if (seconds === 60) {
       minutes += 1;
@@ -144,7 +151,17 @@ function showTime() {
   
 }
 
+//Function to stop timer
 
+function stopTimer() {
+  clearInterval(time);
+}
+
+// Function to run at the end of game
+
+function endGame() {
+  stopTimer();
+}
 
 
 // MODALS
