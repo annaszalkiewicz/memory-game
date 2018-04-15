@@ -12,17 +12,33 @@ const match = document.getElementsByClassName('match');
 let matchedCards = [...match];
 const movesCount = document.getElementById('moves-counter');
 let moves = 0;
+let minutes = 0;
+let seconds = 0;
+let time;
+const timer = document.querySelector('.time-counter');
+const startModal = document.getElementById('start-modal');
+const startButton = document.getElementById('start-button');
+const closeButton = document.getElementById('close-button');
 
 
 // FUNCTIONS' DEFINITIONS
 
+// Function to start game on load/reload
+
+window.onload = function () {
+  startGame();
+}
+
 // Function to reset game
 
-function init() {
+function startGame() {
   shuffleCards();
-  unmatched();
+  showStartModal();
+  moves = 0;
+  minutes = 0;
+  seconds = 0;
+  showTime();
 }
-init();
 
 // Function to shuffle cards randomly
 
@@ -44,7 +60,6 @@ function flipCard(event) {
   this.classList.add('flip');
   openCards.push(this);
   checkCards();
-
 }
 
 // Function to run when 2 cards match
@@ -92,9 +107,8 @@ function moveCounter() {
     moves+=1/2;
     movesCount.innerText = moves; 
     checkStars();
+
 }
-
-
 
 function checkStars() {
 
@@ -113,15 +127,55 @@ function checkStars() {
   }
 }
 
+function showTime() {
+
+  let time = setInterval(getTime, 1000);
+  
+  function getTime() {
+    timer.innerHTML = `${minutes}m ${seconds}s`;
+    seconds += 1;
+
+    if (seconds === 60) {
+      minutes += 1;
+      seconds = 0;
+    }
+    
+  }
+  
+}
 
 
+
+
+// MODALS
+
+// Function to show modal on window load
+
+function showStartModal() {
+  startModal.style.display = 'block';
+}
+
+// Function to close modal
+
+function closeStartModal() {
+  startModal.style.display = 'none';
+}
 
 // EVENT LISTENERS
 
 // Reload game on button click
-reload.addEventListener('click', init); // Reset game when clicking on reload button
+reload.addEventListener('click', startGame); // Reset game when clicking on reload button
 
 // Flip card event when clicking on card
 for (gameCard of gameCards) {
   gameCard.addEventListener('click', flipCard);
 }
+
+// Event to close modal on click close button
+closeButton.addEventListener('click', closeStartModal);
+
+// Event to close modal on click anywhere
+window.addEventListener('click', closeStartModal);
+
+// Event to start game on click button
+startButton.addEventListener('click', showTime);
