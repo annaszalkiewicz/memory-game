@@ -26,18 +26,16 @@ const endGameMessage = document.getElementById('end-message');
 // Function to start game on load/reload
 
 window.onload = function () {
-	startGame();
+	showStartModal();
 };
 
 // Function to reset game
 
 function startGame() {
+
 	shuffleCards();
-	showStartModal();
-	moves = 0;
-	minutes = 0;
-	seconds = 0;
 	showTime();
+	
 }
 
 // Function to shuffle cards randomly
@@ -79,8 +77,6 @@ function matched() {
 		});
 		openCards = [];
 	}, 1000);
-
-  
 
 }
 
@@ -176,7 +172,7 @@ function endGame() {
 	setTimeout(() => {
 		endModal.classList.add('show');
 		message();
-	}, 2000);
+	}, 1000);
   
 }
 
