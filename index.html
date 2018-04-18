@@ -13,7 +13,7 @@
     <div class="container">
       <div class="modal-container" id="start-modal">
         <div class="modal-content">
-          <span class="close" id="close-button" >&times;</span>
+          <span class="close" id="close-button" role="button" aria-labelledby="Close">X</span>
           <header class="top-header">
             <div class="logo-modal">
               <img src="./img/logo-memory.svg" alt="Logo">
@@ -57,10 +57,10 @@
             </h3>
             <p class="time-counter"></p>
           </div>
-          <button type="button" name="button" class="reload-button" id="reload-game" onClick="window.location.reload()">
+          <button type="button" name="button" class="reload-button" id="reload-game" onClick="window.location.reload()" role="button" aria-label="Click to reload game">
             <i class="fas fa-redo-alt fa-2x"></i>
           </button>
-          <button type="button" name="button" class="help-button">
+          <button type="button" name="button" class="help-button" role="button">
             <i class="fas fa-question fa-2x"></i>
           </button>
         </div>
@@ -69,98 +69,98 @@
       <section id="game-canvas">
         <div class="board-container">
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&alpha;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card green">
-              <div class="side front">?</div>
+            <div class="card green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&alpha;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card dark-green">
-              <div class="side front">?</div>
+            <div class="card dark-green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&beta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&beta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card green">
-              <div class="side front">?</div>
+            <div class="card green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&gamma;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card dark-green">
-              <div class="side front">?</div>
+            <div class="card dark-green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&gamma;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true" aria-label="Click to open card">?</div>
               <div class="side back">&delta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card green">
-              <div class="side front">?</div>
+            <div class="card green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&delta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card dark-green">
-              <div class="side front">?</div>
+            <div class="card dark-green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&zeta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&zeta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card green">
-              <div class="side front">?</div>
+            <div class="card green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&eta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card dark-green">
-              <div class="side front">?</div>
+            <div class="card dark-green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&eta;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&lambda;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card green">
-              <div class="side front">?</div>
+            <div class="card green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&lambda;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card dark-green">
-              <div class="side front">?</div>
+            <div class="card dark-green" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&mu;</div>
             </div>
           </div>
           <div class="board">
-            <div class="card blue">
-              <div class="side front">?</div>
+            <div class="card blue" tabindex="0" role="button" aria-label="Click to open card">
+              <div class="side front" aria-hidden="true">?</div>
               <div class="side back">&mu;</div>
             </div>
           </div>
@@ -173,7 +173,7 @@
       </footer>
       <div class="modal-container" id="end-modal">
         <div class="modal-content">
-          <span class="close" id="end-close-button" >&times;</span>
+          <span class="close" id="end-close-button" role="button">&times;</span>
           <header class="top-header">
             <div class="logo-modal">
               <img src="./img/logo-memory.svg" alt="Logo">

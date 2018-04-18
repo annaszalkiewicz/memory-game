@@ -213,6 +213,11 @@ for (gameCard of gameCards) {
 	gameCard.addEventListener('click', flipCard);
 }
 
+// Flip card event when using keyboard
+for (gameCard of gameCards) {
+	gameCard.addEventListener('keypress', flipCard);
+}
+
 // Event to close modal on click close button
 closeButton.addEventListener('click', closeStartModal);
 endCloseButton.addEventListener('click', closeEndModal);
