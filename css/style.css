@@ -28,7 +28,7 @@ body {
 
 /* HEADER */
 
-.top-header {
+.top-header, .start-top-header {
   padding: 10px;
   border-bottom: solid 1px #000;
 }
@@ -218,7 +218,7 @@ body {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.modal-content {
+.modal-content, .start-modal-content {
   background-color: #fefefe;
   margin: 0 auto;
   padding: 1em;
@@ -237,18 +237,18 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.logo-modal {
+.logo-modal, .start-logo-modal {
   width: 55px;
   height: 55px;
   margin-left: 50%;
   transform: translateX(-50%);
 }
-.modal-welcome {
+.modal-welcome, .start-modal-welcome {
   text-align: center;
   font-size: 2em;
   margin-top: 1.3em;
 }
-.modal-text {
+.modal-text, .start-modal-text {
   margin-top: 2em;
   text-align: center;
 }

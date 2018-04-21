@@ -8,21 +8,22 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|EB+Garamond:400,500,600" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
   </head>
   <body>
     <div class="container">
       <div class="modal-container" id="start-modal">
-        <div class="modal-content">
-          <span class="close" id="close-button" role="button" aria-labelledby="Close">X</span>
-          <header class="top-header">
-            <div class="logo-modal">
+        <div class="start-modal-content">
+          <span class="close" id="close-button" role="button" aria-label="Click to close">x</span>
+          <header class="start-top-header-modal">
+            <div class="start-logo-modal">
               <img src="./img/logo-memory.svg" alt="Logo">
             </div>
           </header>
-          <h2 class="modal-welcome">
+          <h2 class="start-modal-welcome">
             Welcome!
           </h2>
-          <p class="modal-text">
+          <p class="start-modal-text">
             Click "Start game" button in order to start game. The purpose of this game is to find all pairs of cards. Click on 2 cards: if you find same cards, they will stay open, if not - they will flip back. Try to memorize them in order to finish game in least possible moves and time.
           </p>
           <button id="start-button" class="start-button">Start game!</button>
@@ -60,9 +61,9 @@
           <button type="button" name="button" class="reload-button" id="reload-game" onClick="window.location.reload()" role="button" aria-label="Click to reload game">
             <i class="fas fa-redo-alt fa-2x"></i>
           </button>
-          <button type="button" name="button" class="help-button" role="button">
+          <!-- <button type="button" name="button" class="help-button" role="button">
             <i class="fas fa-question fa-2x"></i>
-          </button>
+          </button> -->
         </div>
 
       </section>
