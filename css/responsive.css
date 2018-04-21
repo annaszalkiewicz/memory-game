@@ -212,6 +212,7 @@
 
   .board-container {
     width: 55%;
+    max-width: 352px;
     margin: -278px 10px auto auto;
   }
   .board {
@@ -228,5 +229,10 @@
   }
   .copyright {
     font-size: 1em;
+  }
+}
+@media screen and (min-width: 384px) and (orientation: portrait) {
+  .board-container {
+    width: 360px;
   }
 }
