@@ -167,3 +167,66 @@
     margin: 5em auto;
   }
 }
+@media screen and (min-width: 640px) and (orientation: landscape) {
+
+  /* CONTAINER  */
+
+  .container {
+    max-width: 100%;
+  }
+
+  /* HEADER  */
+
+  .top-header {
+    width: 44%;
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+  }
+  .logo {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 0;
+    transform: none;
+    margin-left: 10px;
+  }
+  .title {
+    font-size: 1.2em;
+    position: absolute;
+    margin: 5px auto auto 75px;
+  }
+  .subtitle {
+    position: absolute;
+    margin: 30px auto auto 75px;
+    font-size: 1.1em;
+  }
+
+  /* NAVIGATION PANEL SECTION */
+
+  .game-options {
+    width: 41%;
+  }
+
+  /* GAME CANVAS SECTION */
+
+  .board-container {
+    width: 55%;
+    margin: -278px 10px auto auto;
+  }
+  .board {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* FOOTER  */
+
+  .footer {
+    width: 43%;
+    padding: 17px;
+    margin: -76px auto auto 0;
+  }
+  .copyright {
+    font-size: 1em;
+  }
+}
