@@ -81,6 +81,7 @@
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
+    text-align: left;
   }
   .star, .moves-counter, .time-counter {
     display: inline-block;
@@ -117,5 +118,52 @@
   .copyright {
     padding: 2px;
     font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 360px) and (orientation: portrait) {
+
+  /* HEADER */
+
+  .top-header {
+    margin-top: 6px;
+  }
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  .title {
+    font-size: 1.7em;
+    margin: -60px auto auto 65px;
+  }
+  .subtitle {
+    font-size: 1.6em;
+    margin: -30px auto auto 65px;
+  }
+
+  /* SECTION NAVIGATION PANEL */
+
+  .game-options {
+    width: 100%;
+  }
+  .row {
+    margin-top: 1em;
+  }
+
+  /* SECTION GAME CANVAS */
+
+  .board-container {
+    width: 100%;
+    margin: 1em auto;
+  }
+  .board {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* MODALS */
+
+  .start-modal-content {
+    margin: 5em auto;
   }
 }

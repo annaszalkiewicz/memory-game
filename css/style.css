@@ -149,14 +149,11 @@ body {
   padding: 10px;
   text-align: center;
 }
-.moves, .timer {
-  width: 24%;
+.stars, .moves, .timer {
+  width: 35%;
 }
 .row-title {
   font-weight: 500;
-}
-.stars {
-  width: 24%;
 }
 .fa-star {
   color: #6c943e;
