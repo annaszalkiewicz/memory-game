@@ -330,3 +330,33 @@
     bottom: 0;
   }
 }
+@media screen and (min-width: 980px) and (orientation: portrait) {
+  .top-header {
+    padding: 2em;
+  }
+  .game-options {
+    width: 769px;
+  }
+  .row {
+    padding: 40px;
+  }
+  .board-container {
+    width: 769px;
+  }
+  .board {
+    width: 150px;
+    height: 150px;
+  }
+  .board .card {
+    font-size: 3em;
+  }
+  .board .card .front {
+    margin-top: 30px;
+  }
+  .board .card .back {
+    line-height: 1.9;
+  }
+  .footer {
+    padding: 30px;
+  }
+}
