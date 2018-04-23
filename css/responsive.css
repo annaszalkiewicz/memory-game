@@ -211,8 +211,7 @@
   /* GAME CANVAS SECTION */
 
   .board-container {
-    width: 55%;
-    max-width: 352px;
+    width: 352px;
     margin: -278px 10px auto auto;
   }
   .board {
@@ -358,5 +357,76 @@
   }
   .footer {
     padding: 30px;
+  }
+}
+@media screen and (min-width: 780px) and (orientation: landscape) {
+
+  /* CONTAINER */
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  /* HEADER */
+
+  .top-header {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .logo {
+    position: unset;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2em;
+  }
+  .title {
+    position: unset;
+    text-align: center;
+    margin: 1em auto auto;
+    font-size: 1.6em;
+  }
+  .subtitle {
+    position: unset;
+    text-align: center;
+    margin: 0 auto 0.9em;
+    font-size: 1.4em;
+  }
+
+  /* SECTION NAVIGATION PANEL */
+
+  .game-options {
+    margin: 1em auto auto 1em;
+    width: 34%;
+  }
+
+  /* SECTION GAME CANVAS  */
+
+  .board-container {
+    width: 469px;
+    margin: -400px 10px auto auto;
+    padding: 10px 10px 30px 10px
+  }
+  .board {
+    width: 90px;
+    height: 90px;
+    margin-top: 20px;
+  }
+  .board .card .front {
+    margin-top: 20px;
+  }
+  .board .card .back {
+    line-height: 1.9;
+  }
+
+  /* FOOTER */
+  
+  .footer {
+    width: 100%;
+    max-width: 800px;
+    bottom: 0;
+    position: absolute;
   }
 }
