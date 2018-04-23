@@ -546,3 +546,48 @@
     position: fixed;
   }
 }
+@media screen and (min-width: 1280px) and (min-height: 900px) and (orientation: landscape) {
+
+  /* CONTAINER */
+
+  .container {
+    width: 1280px;
+    max-width: 1280px;
+  }
+
+  /* HEADER */
+
+  .top-header {
+    width: 1280px;
+    max-width: 1280px;
+  }
+
+  /* SECTION NAVIGATION PANEL */
+
+  .row {
+    max-width: 619px;
+    padding: 20px;
+  }
+  .game-options {
+    max-width: 619px;
+  }
+
+  /* SECTION GAME CANVAS  */
+
+  .board-container {
+    width: 619px;
+  }
+  .board {
+    width: 120px;
+    height: 120px;
+  }
+  .board .card {
+    font-size: 3em;
+  }
+  .board .card .front {
+    margin-top: 30px;
+  }
+  .board .card .back {
+    line-height: 2;
+  }
+}
