@@ -134,10 +134,19 @@ function checkStars() {
 	else if (moves > 35) {
 		oneStar.style.color = '#000';
 		stars = '0 stars';
+		gameOver();
 	}
 	else {
 		stars = '3 stars';
 	}
+}
+
+// Function to end game if stars = 0
+
+const gameOverModal = document.getElementById('game-over-modal');
+
+function gameOver() {
+	gameOverModal.style.display = 'block';
 }
 
 // Function to get timer working
