@@ -160,12 +160,6 @@
     width: 70px;
     height: 70px;
   }
-
-  /* MODALS */
-
-  .start-modal-content {
-    margin: 5em auto;
-  }
 }
 @media screen and (min-width: 640px) and (orientation: landscape) {
 
