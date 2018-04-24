@@ -60,6 +60,7 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 10px 10px 20px 10px;
+  box-shadow: 0 0 20px #000;
 }
 .board {
   -webkit-perspective: 800px;
@@ -68,6 +69,7 @@ body {
   width: 60px;
   height: 60px;
   margin-top: 10px;
+  box-shadow: 0 0 15px #000;
 }
 .board .card {
   width: 100%;
@@ -96,7 +98,6 @@ body {
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  /* z-index: 2; */
 }
 .board .card .front {
   position: absolute;
@@ -140,6 +141,7 @@ body {
   color: #fff;
   width: 300px;
   margin: 10px auto;
+  box-shadow: 0 0 15px #000;
 }
 .row {
   width: 100%;
