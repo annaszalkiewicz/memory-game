@@ -585,3 +585,34 @@
     line-height: 2;
   }
 }
+@media screen and (min-width: 700px) {
+  .animation {
+    display: block;
+    position: fixed;
+    z-index: -1;
+  }
+  .animation span {
+    position: absolute;
+    display: block;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    font-family: 'EB+Garamond', serif;
+    animation-timing-function: ease;
+    animation-name: falling-down;
+  }
+  
+  @keyframes falling-down {
+    0% {
+      transform: none;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.7;
+      transform: translateY(100vh);
+    }
+  }
+}
