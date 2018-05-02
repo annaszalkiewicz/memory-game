@@ -212,14 +212,6 @@ function message() {
 	endGameMessage.innerHTML = `You finished game in ${timer.innerHTML} and ${moves} moves. You gained ${stars}.`;
 }
 
-// for (gameCard of gameCards) {
-// 	gameCard.addEventListener('keypress', function (e) {
-// 		if (e.key === 13) {
-// 			flipCard();
-// 		}
-// 	});
-// }
-
 // EVENT LISTENERS
 
 // Reload game on button click
@@ -257,7 +249,7 @@ const letters = {
 	// Function to create each letter every 300ms
 
 	repeat: function () {
-		window.setInterval(letters.create, 200);
+		window.setInterval(letters.create, 100);
 	},
 
 	// Function to create letter and place it in DOM structure
@@ -293,3 +285,27 @@ const letters = {
 // Event listener to start letters animation when document is loaded
 
 document.addEventListener('DOMContentLoaded', letters.repeat);
+
+// Function to create keyboard shortcuts
+
+function shortcuts(event) {
+
+	if (event.keyCode === 27 ) {  // ESCAPE key closes modal
+		closeStartModal();
+		closeEndModal();
+	}
+
+	// ENTER key opens card
+	else if ((event.keyCode === 13)&&(event.target.classList.contains('card'))) { 	
+		event.preventDefault();
+		flipCard();
+	} 
+
+	// SPACEBAR key opens card
+	else if ((event.keyCode === 32)&&(event.target.classList.contains('card'))) {
+		event.preventDefault();
+		flipCard();
+	} 
+}
+
+document.addEventListener('keydown', shortcuts);
