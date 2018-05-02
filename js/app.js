@@ -238,6 +238,27 @@ window.addEventListener('click', closeEndModal);
 // Event to start game on click button
 startButton.addEventListener('click', startGame);
 
+// TOUCH EVENTS FOR MOBILE DEVICES AND TABLETS
+
+// Reload game on button click
+reload.addEventListener('touchstart', startGame); // Reset game when clicking on reload button
+
+// Flip card event when clicking on card
+for (gameCard of gameCards) {
+	gameCard.addEventListener('touchstart', flipCard);
+}
+
+// Event to close modal on click close button
+closeButton.addEventListener('touchstart', closeStartModal);
+endCloseButton.addEventListener('touchstart', closeEndModal);
+
+// Event to close modal on click anywhere
+window.addEventListener('touchstart', closeStartModal);
+window.addEventListener('touchstart', closeEndModal);
+
+// Event to start game on click button
+startButton.addEventListener('touchstart', startGame);
+
 // ANIMATED BACKGROUND
 
 const letters = {
