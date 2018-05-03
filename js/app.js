@@ -132,8 +132,6 @@ function checkStars() {
 		stars = '1 star';
 	}
 	else if (moves > 35) {
-		oneStar.style.color = '#000';
-		stars = '0 stars';
 		gameOver();
 	}
 	else {
@@ -317,7 +315,7 @@ function shortcuts(event) {
 	}
 
 	// ENTER key opens card
-	else if ((event.keyCode === 13)&&(event.target.classList.contains('card'))) { 	
+	else if (event.keyCode === 13&&event.target.classList.contains('card')) { 	
 		event.preventDefault();
 		flipCard();
 	} 
