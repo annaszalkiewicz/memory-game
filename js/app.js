@@ -239,11 +239,11 @@ startButton.addEventListener('click', startGame);
 // TOUCH EVENTS FOR MOBILE DEVICES AND TABLETS
 
 // Reload game on button click
-reload.addEventListener('touchstart', startGame); // Reset game when clicking on reload button
+reload.addEventListener('touchstart', e => {e.preventDefault(); startGame}); // Reset game when clicking on reload button
 
 // Flip card event when clicking on card
 for (gameCard of gameCards) {
-	gameCard.addEventListener('touchstart', flipCard);
+	gameCard.addEventListener('touchstart', e => {e.preventDefault(); flipCard} );
 }
 
 // Event to close modal on click close button
