@@ -35,7 +35,6 @@ function startGame() {
 
 	shuffleCards();
 	showTime();
-
 }
 
 // Function to shuffle cards randomly
@@ -51,6 +50,18 @@ function shuffleCards() {
 
 // Function to add flip animation
 
+function flip(event) {
+
+	let card = event.target;
+
+	if (card.classList.contains('card')) {
+		card.classList.add('flip');
+		openCards.push(card);
+		checkCards();
+	}
+
+}
+
 function flipCard(event) {
 
 	let front = event.target;
@@ -60,6 +71,29 @@ function flipCard(event) {
 	openCards.push(this);
 	checkCards();
 }
+
+// function flipCard(event) {
+
+// 	// let front = event.target;
+// 	// let back = event.target.nextElementSibling;
+
+// 	event.preventDefault();
+
+// 	event.target.classList.add('flip');
+// 	openCards.push(this);
+
+// 	checkCards();
+// }
+
+// function flip(event) {
+
+// 	let front = event.target;
+// 	let back = event.target.nextElementSibling;
+
+// 	event.target.classList.add('flip');
+// 	openCards.push(this);
+// 	checkCards();
+// }
 
 // Function to run when 2 cards match
 
@@ -121,7 +155,6 @@ function checkStars() {
 
 	const threeStars = document.getElementById('three-stars');
 	const twoStars = document.getElementById('two-stars');
-	const oneStar = document.getElementById('one-star');
 
 	if ((moves > 15) && (moves < 25)) {
 		threeStars.style.color = '#000';
@@ -139,7 +172,7 @@ function checkStars() {
 	}
 }
 
-// Function to end game if stars = 0
+// Function to end game if moves > 35
 
 const gameOverModal = document.getElementById('game-over-modal');
 
@@ -213,37 +246,32 @@ function message() {
 // EVENT LISTENERS
 
 // Reload game on button click
-reload.addEventListener('click', startGame); // Reset game when clicking on reload button
+reload.addEventListener('mousedown', startGame); // Reset game when clicking on reload button
 
 // Flip card event when clicking on card
 for (gameCard of gameCards) {
-	gameCard.addEventListener('click', flipCard);
+	gameCard.addEventListener('mousedown', flipCard);
 }
 
-// Flip card event when using keyboard
-
-
-
-
 // Event to close modal on click close button
-closeButton.addEventListener('click', closeStartModal);
-endCloseButton.addEventListener('click', closeEndModal);
+closeButton.addEventListener('mousedown', closeStartModal);
+endCloseButton.addEventListener('mousedown', closeEndModal);
 
 // Event to close modal on click anywhere
-window.addEventListener('click', closeStartModal);
-window.addEventListener('click', closeEndModal);
+window.addEventListener('mousedown', closeStartModal);
+window.addEventListener('mousedown', closeEndModal);
 
 // Event to start game on click button
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('mousedown', startGame);
 
 // TOUCH EVENTS FOR MOBILE DEVICES AND TABLETS
 
 // Reload game on button click
-reload.addEventListener('touchstart', e => {e.preventDefault(); startGame}); // Reset game when clicking on reload button
+reload.addEventListener('touchstart', e => {e.preventDefault(); startGame;}); // Reset game when clicking on reload button
 
 // Flip card event when clicking on card
 for (gameCard of gameCards) {
-	gameCard.addEventListener('touchstart', e => {e.preventDefault(); flipCard} );
+	gameCard.addEventListener('touchstart', e => {e.preventDefault(); flipCard;} );
 }
 
 // Event to close modal on click close button
@@ -256,6 +284,13 @@ window.addEventListener('touchstart', closeEndModal);
 
 // Event to start game on click button
 startButton.addEventListener('touchstart', startGame);
+
+const playAgain = document.getElementById('play-again');
+
+playAgain.addEventListener('mousedown', function () {
+	window.location.reload();
+	startGame();
+});
 
 // ANIMATED BACKGROUND
 
@@ -315,15 +350,17 @@ function shortcuts(event) {
 	}
 
 	// ENTER key opens card
-	else if (event.keyCode === 13&&event.target.classList.contains('card')) { 	
-		event.preventDefault();
-		flipCard();
+	else if ((event.keyCode === 13)&&(event.target.classList.contains('card'))&&(event.target == document.activeElement)) { 
+		flip(event);
 	} 
 
+	else if ((event.keyCode === 13)&&(event.target.classList.contains('start-button'))) {
+		startGame();
+	}
+
 	// SPACEBAR key opens card
-	else if ((event.keyCode === 32)&&(event.target.classList.contains('card'))) {
-		event.preventDefault();
-		flipCard();
+	else if ((event.keyCode === 32)&&(event.target.classList.contains('card'))&&(event.target == document.activeElement)) {
+		flip(event);
 	} 
 }
 

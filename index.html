@@ -74,13 +74,13 @@
     <section id="game-canvas">
       <div class="board-container">
         <div class="board">
-          <div class="card blue" tabindex="0" role="button" aria-pressed="true">
+          <div class="card blue" tabindex="0" role="button">
             <div class="side front" aria-hidden="true">?</div>
             <div class="side back">&alpha;</div>
           </div>
         </div>
         <div class="board">
-          <div class="card green" tabindex="0" role="button" aria-pressed="true">
+          <div class="card green" tabindex="0" role="button">
             <div class="side front" aria-hidden="true">?</div>
             <div class="side back">&alpha;</div>
           </div>
@@ -189,7 +189,7 @@
           Congratulations! You won!
         </h2>
         <p class="modal-text" id="end-message"></p>
-        <button class="start-button" onClick="window.location.reload()">Play again!</button>
+        <button class="start-button" id="play-again">Play again!</button>
       </div>
     </div>
     <div class="modal-container" id="game-over-modal">

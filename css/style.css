@@ -71,8 +71,8 @@ body {
   margin-top: 10px;
   box-shadow: 0 0 15px #000;
 }
-.board:focus {
-  box-shadow: 0 0 15px #6c943e;
+.board:focus, .board:focus .card:focus {
+  box-shadow: 0 0 15px #6c943e !important;
 }
 .board .card {
   width: 100%;
@@ -196,13 +196,7 @@ body {
 .reload-button:hover, .reload-button:focus {
   color: #6c943e;
 }
-:focus {
-  outline: #6c943e;
-  color: #6c943e;
-}
-:-moz-focusring {
-  outline: 0;
-}
+
 /* FOOTER  */
 
 .footer {
