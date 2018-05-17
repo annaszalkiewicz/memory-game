@@ -52,12 +52,15 @@ body {
 
 /* SECTION GAME-CANVAS */
 
+.game-canvas-heading {
+  display: none;
+}
 .board-container {
   width: 300px;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 10px 10px 20px 10px;
   box-shadow: 0 0 20px #000;
@@ -122,12 +125,27 @@ body {
 }
 .blue {
   background-color: #155f60;
+  background: radial-gradient(#468b8b, #155f60);
+}
+.blue:hover {
+  background-color: #468b8b;
+  background: radial-gradient(#155f60, #468b8b);
 }
 .green {
   background-color: #6c943e;
+  background: radial-gradient(#bcda99, #6c943e);
+}
+.green:hover {
+  background-color: #bcda99;
+  background: radial-gradient(#6c943e, #bcda99);
 }
 .dark-green {
   background-color: #1e7f3f;
+  background: radial-gradient(#5cb279, #1e7f3f);
+}
+.dark-green:hover {
+  background-color: #5cb279;
+  background: radial-gradient(#1e7f3f, #5cb279);
 }
 .back {
   margin-top: 5px;
