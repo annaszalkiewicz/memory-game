@@ -21,6 +21,7 @@ const endModal = document.getElementById('end-modal');
 const endCloseButton = document.getElementById('end-close-button');
 const endCloseButton2 = document.getElementById('end-close-button-2');
 const endGameMessage = document.getElementById('end-message');
+let enableClick = true;
 
 // FUNCTIONS' DEFINITIONS
 
@@ -56,7 +57,7 @@ function flip(event) {
 
 	let card = event.target;
 
-	if (card.classList.contains('card')) {
+	if ((enableClick)&&(card.classList.contains('card'))) {
 		card.classList.add('flip');
 		openCards.push(card);
 		checkCards();
@@ -69,16 +70,20 @@ function flipCard(event) {
 	let front = event.target;
 	let back = event.target.nextElementSibling;
 
-	this.classList.add('flip');
-	openCards.push(this);
-	checkCards();
+	if (enableClick) {
+		this.classList.add('flip');
+		openCards.push(this);
+		checkCards();
+	}
 }
 
 // Function to run when 2 cards match
 
 function matched() {
+	enableClick = false;
 
 	setTimeout(function () {
+
 		openCards.forEach(function (card) {
 			card.classList.add('match');
 			matchedCards.push(card);
@@ -102,7 +107,7 @@ function unmatched() {
 			card.classList.remove('flip');
 		});
 		openCards = [];
-	}, 500);
+	}, 1000);
 }
 
 // Function to check if 2 cards match
@@ -111,14 +116,16 @@ function checkCards() {
 
 	for (let openCard of openCards) {
 		if ((openCards.length === 2) && (openCards[0].innerText === openCards[1].innerText)) {
+
 			moveCounter();
 			matched();
-
 		}
 		else if ((openCards.length === 2) && (openCards[0].innerText !== openCards[1].innerText)) {
+
 			moveCounter();
 			unmatched();
 		}
+
 	}
 
 }
