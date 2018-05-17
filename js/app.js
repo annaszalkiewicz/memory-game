@@ -19,6 +19,7 @@ const startButton = document.getElementById('start-button');
 const closeButton = document.getElementById('close-button');
 const endModal = document.getElementById('end-modal');
 const endCloseButton = document.getElementById('end-close-button');
+const endCloseButton2 = document.getElementById('end-close-button-2');
 const endGameMessage = document.getElementById('end-message');
 
 // FUNCTIONS' DEFINITIONS
@@ -234,6 +235,7 @@ for (gameCard of gameCards) {
 // Event to close modal on click close button
 closeButton.addEventListener('mousedown', closeStartModal);
 endCloseButton.addEventListener('mousedown', closeEndModal);
+endCloseButton2.addEventListener('mousedown', closeEndModal);
 
 // Event to close modal on click anywhere
 window.addEventListener('mousedown', closeStartModal);
@@ -255,6 +257,7 @@ for (gameCard of gameCards) {
 // Event to close modal on click close button
 closeButton.addEventListener('touchstart', closeStartModal);
 endCloseButton.addEventListener('touchstart', closeEndModal);
+endCloseButton2.addEventListener('touchstart', closeEndModal);
 
 // Event to close modal on click anywhere
 window.addEventListener('touchstart', closeStartModal);
@@ -262,6 +265,9 @@ window.addEventListener('touchstart', closeEndModal);
 
 // Event to start game on click button
 startButton.addEventListener('touchstart', startGame);
+
+
+// Play again button events
 
 const playAgain = document.getElementById('play-again');
 
@@ -351,4 +357,5 @@ function shortcuts(event) {
 
 }
 
+// Event listener to keyboard events
 document.addEventListener('keydown', shortcuts);
