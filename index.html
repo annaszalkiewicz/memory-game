@@ -6,7 +6,8 @@
   <title>Learn Greek letters with Memory Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Learn Greek letters with Memory Game! This is a project for Front-End Web Developer Nanodegree Programm by Udacity.">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|EB+Garamond:400,500,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&amp;subset=greek" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/style.css">
@@ -18,7 +19,7 @@
   <div class="container">
     <div class="modal-container" id="start-modal">
       <div class="start-modal-content">
-        <span class="close" id="close-button" role="button" tab-index="0" aria-label="Click to close">x</span>
+        <span class="close" id="close-button" role="button" aria-label="Click to close">x</span>
         <header class="start-top-header-modal">
           <div class="start-logo-modal">
             <img src="./img/logo-memory.svg" alt="Logo">
@@ -42,135 +43,138 @@
       <h1 class="title">Learn Greek letters</h1>
       <h2 class="subtitle">with Memory Game!</h2>
     </header>
-    <section id="navigation-panel" class="game-options">
-      <div class="row">
-        <div class="stars">
-          <h3 class="row-title">Stars:</h3>
-          <div class="star">
-            <i class="fas fa-star" id="one-star"></i>
-            <i class="fas fa-star" id="two-stars"></i>
-            <i class="fas fa-star" id="three-stars"></i>
+    <main class="main">
+      <section id="navigation-panel" class="game-options">
+        <div class="row">
+          <div class="stars">
+            <h3 class="row-title">Stars:</h3>
+            <div class="star">
+              <i class="fas fa-star" id="one-star"></i>
+              <i class="fas fa-star" id="two-stars"></i>
+              <i class="fas fa-star" id="three-stars"></i>
+            </div>
           </div>
+          <div class="moves">
+            <h3 class="row-title">
+              Moves:
+            </h3>
+            <p class="moves-counter" id="moves-counter">0</p>
+          </div>
+          <div class="timer">
+            <h3 class="row-title">
+              Time:
+            </h3>
+            <p class="time-counter"></p>
+          </div>
+          <button type="button" name="button" class="reload-button" id="reload-game" onClick="window.location.reload()" aria-label="Click to reload game">
+            <i class="fas fa-redo-alt fa-2x"></i>
+          </button>
         </div>
-        <div class="moves">
-          <h3 class="row-title">
-            Moves:
-          </h3>
-          <p class="moves-counter" id="moves-counter">0</p>
-        </div>
-        <div class="timer">
-          <h3 class="row-title">
-            Time:
-          </h3>
-          <p class="time-counter"></p>
-        </div>
-        <button type="button" name="button" class="reload-button" id="reload-game" onClick="window.location.reload()" role="button"
-          aria-label="Click to reload game">
-          <i class="fas fa-redo-alt fa-2x"></i>
-        </button>
-      </div>
 
-    </section>
-    <section id="game-canvas">
-      <div class="board-container">
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&alpha;</div>
+      </section>
+      <section id="game-canvas">
+        <h2 class="game-canvas-heading">Cards' Board</h2>
+        <div class="board-container">
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&alpha;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&alpha;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&beta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&beta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&gamma;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&gamma;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&delta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&delta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&zeta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&zeta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&eta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&eta;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&lambda;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&lambda;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card dark-green" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&mu;</div>
+            </div>
+          </div>
+          <div class="board">
+            <div class="card blue" tabindex="0" role="button">
+              <div class="side front" aria-hidden="true">?</div>
+              <div class="side back">&mu;</div>
+            </div>
           </div>
         </div>
-        <div class="board">
-          <div class="card green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&alpha;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card dark-green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&beta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&beta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&gamma;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card dark-green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&gamma;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&delta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&delta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card dark-green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&zeta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&zeta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&eta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card dark-green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&eta;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&lambda;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&lambda;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card dark-green" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&mu;</div>
-          </div>
-        </div>
-        <div class="board">
-          <div class="card blue" tabindex="0" role="button">
-            <div class="side front" aria-hidden="true">?</div>
-            <div class="side back">&mu;</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
     <footer class="footer">
       <p class="copyright">
         Written and coded by
@@ -194,7 +198,7 @@
     </div>
     <div class="modal-container" id="game-over-modal" tabindex="1">
       <div class="modal-content">
-        <span class="close" id="end-close-button" role="button">&times;</span>
+        <span class="close" id="end-close-button-2" role="button">&times;</span>
         <header class="start-top-header-modal">
           <div class="start-logo-modal">
             <img src="./img/logo-memory.svg" alt="Logo">
@@ -209,7 +213,7 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="./js/app.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
