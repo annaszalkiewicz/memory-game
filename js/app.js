@@ -33,6 +33,7 @@ window.onload = function () {
 
 function startGame() {
 
+	closeStartModal();
 	shuffleCards();
 	showTime();
 }
@@ -71,29 +72,6 @@ function flipCard(event) {
 	openCards.push(this);
 	checkCards();
 }
-
-// function flipCard(event) {
-
-// 	// let front = event.target;
-// 	// let back = event.target.nextElementSibling;
-
-// 	event.preventDefault();
-
-// 	event.target.classList.add('flip');
-// 	openCards.push(this);
-
-// 	checkCards();
-// }
-
-// function flip(event) {
-
-// 	let front = event.target;
-// 	let back = event.target.nextElementSibling;
-
-// 	event.target.classList.add('flip');
-// 	openCards.push(this);
-// 	checkCards();
-// }
 
 // Function to run when 2 cards match
 
@@ -292,6 +270,13 @@ playAgain.addEventListener('mousedown', function () {
 	startGame();
 });
 
+playAgain.addEventListener('keydown', function (event) {
+	if (event.keyCode === 13) {
+		window.location.reload();
+		startGame();
+	}
+});
+
 // ANIMATED BACKGROUND
 
 const letters = {
@@ -354,7 +339,8 @@ function shortcuts(event) {
 		flip(event);
 	} 
 
-	else if ((event.keyCode === 13)&&(event.target.classList.contains('start-button'))) {
+	else if ((event.keyCode === 13)&&(startButton)) {
+		closeEndModal();
 		startGame();
 	}
 
@@ -362,6 +348,7 @@ function shortcuts(event) {
 	else if ((event.keyCode === 32)&&(event.target.classList.contains('card'))&&(event.target == document.activeElement)) {
 		flip(event);
 	} 
+
 }
 
 document.addEventListener('keydown', shortcuts);
