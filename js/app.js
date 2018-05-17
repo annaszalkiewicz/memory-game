@@ -80,6 +80,7 @@ function flipCard(event) {
 // Function to run when 2 cards match
 
 function matched() {
+
 	enableClick = false;
 
 	setTimeout(function () {
@@ -94,6 +95,8 @@ function matched() {
 
 		});
 		openCards = [];
+		enableClick = true;
+
 	}, 1000);
 
 }
@@ -102,11 +105,14 @@ function matched() {
 
 function unmatched() {
 
+	enableClick = false;
+
 	setTimeout(function () {
 		openCards.forEach(function (card) {
 			card.classList.remove('flip');
 		});
 		openCards = [];
+		enableClick = true;
 	}, 1000);
 }
 

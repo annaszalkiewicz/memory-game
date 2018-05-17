@@ -261,7 +261,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .close {
-  color: #aaa;
+  color: #757575;
   float: right;
   font-size: 28px;
   font-weight: bold;
